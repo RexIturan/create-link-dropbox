@@ -1,0 +1,44 @@
+name: Testing Create Dropbox Link & post to Discord
+
+on:
+  workflow_dispatch:
+
+jobs:
+  local_development:
+    runs-on: ubuntu-latest
+    name: Testing action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Dropbox Link
+        id: create-link-dropbox
+        uses: ./ # Uses an action in the root directory
+        with:
+          DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
+          DROPBOX_FILE_PATH: "/builds/build/build.zip"
+          DEBUG: true
+      - name: echo link
+        run: echo ${{ steps.create-link-dropbox.outputs.link}}
+      - name: Discord Notify
+        # You may pin to the exact commit or the version.
+        # uses: stegzilla/discord-notify@e9ae7f7d5d45da6be819165c3ccf78357e12bdf6
+        uses: stegzilla/discord-notify@v4
+        with:
+          # Webhook URL from Discord
+          webhook_url: ${{ github.DISCORD_WEBHOOK }}
+          # Title for card
+          title: Build Link # optional, default is 
+          # Content of card
+          message: ${{ steps.create-link-dropbox.outputs.link}} # default is 
+          # If action is used in a pull request, attach the preview image for it to the card. Required for custom_image_url
+          #include_image: # optional, default is false
+          # Avatar to use for user
+          #avatar_url: # optional, default is 
+          # Username to send message as
+          #username: # optional, default is GitHub
+          # Colour for the edge of the card in hex
+          #colour: # optional, default is #3371FF
+          # Include custom image on card, include_image must be true
+          #custom_image_url: # optional, default is 
+          # Make the title of the card a link
+          #title_url: # optional, default is 

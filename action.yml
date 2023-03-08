@@ -1,0 +1,23 @@
+name: 'Create Dropbox Link'
+description: 'Generates a shareable link to a file in Dropbox.'
+author: 'RexIturan'
+branding:
+  icon: 'download-cloud'
+  color: 'white'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+inputs:
+  DROPBOX_ACCESS_TOKEN:
+    description: 'Value should be a secret that is set in your repository settings'
+    required: true
+
+  DROPBOX_FILE_PATH:
+    description: 'The path to the file to generate the link for. Default value is "/"'
+    required: false
+    default: "/"
+
+  DEBUG:
+    description: "Enable debugging."
+    required: false
+

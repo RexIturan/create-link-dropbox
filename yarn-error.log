@@ -1,0 +1,61 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev @vercel/ncc
+
+PATH: 
+  C:\Users\Vincent\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Vincent\bin;C:\Users\Vincent\.jdks\jdk-17.0.2\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python38\Scripts;C:\Python38;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\Yarn\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet;C:\Gradle\gradle-7.1\bin;C:\Program Files\Git LFS;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Users\Vincent\AppData\Local\Microsoft\WindowsApps;C:\Users\Vincent\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Vincent\AppData\Local\Yarn\bin;C:\Users\Vincent\AppData\Local\GitHubDesktop\bin;C:\Users\Vincent\.dotnet\tools;C:\Program Files\JetBrains\JetBrains Rider 2020.3.2\bin;C:\Users\Vincent\AppData\Local\gitkraken\bin;C:\Program Files\JetBrains\CLion 2021.2.2\bin;C:\Program Files\JetBrains\JetBrains Rider 2021.3.2\bin;C:\Program Files\Graphviz\bin;C:\Users\Vincent\AppData\Roaming\npm;C:\ProgramData\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  19.7.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Users\Vincent\Documents\GitHub\Actions\create-link-dropbox\package.json: Expected property name or '}' in JSON at position 777
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "create-link-dropbox",
+    "version": "0.0.0",
+    "description": "A GitHub Action to generate a linkt to a file in Dropbox",
+    "main": "dist/index.js",
+    "scripts": {
+      "build": "tsc && ncc build dist/main.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:RexIturan/create-link-dropbox.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/RexIturan/create-link-dropbox/issues"
+    },
+    "homepage": "https://github.com/RexIturan/create-link-dropbox#readme",
+    "dependencies": {
+      "@actions/core": "^1.9.1",
+      "@actions/github": "^2.1.1",
+      "@types/node": "^13.9.3",
+      "dropbox": "^4.0.30",
+      "glob": "^7.1.6"
+    },
+    "devDependencies": {
+      // "node-fetch": "^2.6.7",
+      // "typescript": "^3.8.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

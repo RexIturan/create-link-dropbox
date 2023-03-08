@@ -1,0 +1,20 @@
+name: Testing Create Dropbox Link
+
+on:
+  workflow_dispatch:
+
+jobs:
+  local_development:
+    runs-on: ubuntu-latest
+    name: Testing action
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Dropbox Link
+        id: create-link-dropbox
+        uses: ./ # Uses an action in the root directory
+        with:
+          DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
+          DROPBOX_FILE_PATH: /
+          DEBUG: true
+      - run: echo ${{ steps.create-link-dropbox.outputs.link}} 
